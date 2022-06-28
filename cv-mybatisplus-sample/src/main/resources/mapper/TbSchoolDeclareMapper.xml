@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.clearvision.mybatissample.mapper.TbSchoolDeclareMapper">
+
+    <select id="selectPageList" resultType="com.clearvision.mybatissample.entity.TbSchoolDeclare">
+        select id,
+               school_name,
+               belong_area,
+               prefx_include,
+               province_id,
+               province,
+               city_id,
+               city,
+               region_id,
+               region,
+               school_code,
+               school_attribute,
+               school_address,
+               lng,
+               lat
+        from tb_school_declare
+
+
+    </select>
+</mapper>
