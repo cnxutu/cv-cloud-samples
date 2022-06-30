@@ -1,4 +1,6 @@
 package com.clearvision.mybatissample.controller;
+import java.util.Date;
+import java.time.LocalDateTime;
 
 import com.clearvision.common.enums.ErrorCodeEnum;
 import com.clearvision.common.exception.CustomBusinessException;
@@ -56,16 +58,60 @@ public class TbSchoolDeclareController {
 
 
     @GetMapping("/add")
-    public String add() {
-        TbSchoolDeclare TbSchoolDeclare = new TbSchoolDeclare();
-        boolean save = schoolDeclareService.save(TbSchoolDeclare);
-        return "";
+    public Result add() {
+        TbSchoolDeclare schoolDeclareDO = new TbSchoolDeclare();
+        schoolDeclareDO = schoolAllSet();
+
+        schoolDeclareDO.initDateForInsertNoAuth();
+        boolean i = schoolDeclareService.save(schoolDeclareDO);
+        if (!i){
+            throw new CustomBusinessException(ErrorCodeEnum.OPERATION_FAIL);
+        }
+        return Result.succeed(i);
     }
 
+    private TbSchoolDeclare schoolAllSet() {
+        TbSchoolDeclare schoolDeclareDO = new TbSchoolDeclare();
+        schoolDeclareDO.setSchoolName("");
+        schoolDeclareDO.setBelongArea("");
+        schoolDeclareDO.setPrefxInclude("");
+        schoolDeclareDO.setOrgProperty(0);
+        schoolDeclareDO.setSchoolType(0);
+        schoolDeclareDO.setUrbanRuralAttributes(0);
+        schoolDeclareDO.setSchoolLevel(0);
+        schoolDeclareDO.setProvinceId(0);
+        schoolDeclareDO.setProvince("");
+        schoolDeclareDO.setCityId(0);
+        schoolDeclareDO.setCity("");
+        schoolDeclareDO.setRegionId(0);
+        schoolDeclareDO.setRegion("");
+        schoolDeclareDO.setSchoolCode("");
+        schoolDeclareDO.setSchoolAttribute(0);
+        schoolDeclareDO.setSchoolAddress("");
+        schoolDeclareDO.setRefuseReason("");
+        schoolDeclareDO.setSchoolDeclareState(0);
+        schoolDeclareDO.setLng("");
+        schoolDeclareDO.setLat("");
+        schoolDeclareDO.setReporter(0L);
+        schoolDeclareDO.setReportTime(LocalDateTime.now());
+        schoolDeclareDO.setReporterPhone("");
+        schoolDeclareDO.setRemark("");
+        schoolDeclareDO.setContactPerson("");
+        schoolDeclareDO.setContactPersonPhone("");
+        schoolDeclareDO.setCreateTime(LocalDateTime.now());
+        schoolDeclareDO.setUpdateTime(LocalDateTime.now());
+        schoolDeclareDO.setStreet("");
+        schoolDeclareDO.setCommunity("");
+        schoolDeclareDO.setSocialCreditCode("");
+        schoolDeclareDO.setIsMainCampus(0);
+        schoolDeclareDO.setBranchCampusScCode("");
+        schoolDeclareDO.setSchoolHoldType(0);
+        schoolDeclareDO.setOrganizersType(0);
+        schoolDeclareDO.setParentId(0L);
 
+        return schoolDeclareDO;
 
-
-
+    }
 
 
 }

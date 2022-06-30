@@ -1,6 +1,8 @@
 package com.clearvision.mybatissample.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.clearvision.common.pojo.po.BaseDO;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -13,11 +15,10 @@ import java.time.LocalDateTime;
  * @since 2022-06-28
  */
 @TableName("tb_school_declare")
-public class TbSchoolDeclare implements Serializable {
+public class TbSchoolDeclare extends BaseDO implements Serializable  {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;
 
     /**
      * 机构名称
@@ -149,20 +150,6 @@ public class TbSchoolDeclare implements Serializable {
      */
     private String contactPersonPhone;
 
-    /**
-     * 是否删除
-     */
-    private Integer isDeleted;
-
-    /**
-     * 操作者
-     */
-    private Long operator;
-
-    /**
-     * 创建者
-     */
-    private Long creator;
 
     /**
      * 创建时间
@@ -215,13 +202,6 @@ public class TbSchoolDeclare implements Serializable {
     private Long parentId;
 
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getSchoolName() {
         return schoolName;
@@ -431,41 +411,11 @@ public class TbSchoolDeclare implements Serializable {
         this.contactPersonPhone = contactPersonPhone;
     }
 
-    public Integer getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(Integer isDeleted) {
-        this.isDeleted = isDeleted;
-    }
-
-    public Long getOperator() {
-        return operator;
-    }
-
-    public void setOperator(Long operator) {
-        this.operator = operator;
-    }
-
-    public Long getCreator() {
-        return creator;
-    }
-
-    public void setCreator(Long creator) {
-        this.creator = creator;
-    }
-
-    public LocalDateTime getCreateTime() {
-        return createTime;
-    }
 
     public void setCreateTime(LocalDateTime createTime) {
         this.createTime = createTime;
     }
 
-    public LocalDateTime getUpdateTime() {
-        return updateTime;
-    }
 
     public void setUpdateTime(LocalDateTime updateTime) {
         this.updateTime = updateTime;
@@ -538,7 +488,7 @@ public class TbSchoolDeclare implements Serializable {
     @Override
     public String toString() {
         return "TbSchoolDeclare{" +
-        "id=" + id +
+        "id=" + super.getId() +
         ", schoolName=" + schoolName +
         ", belongArea=" + belongArea +
         ", prefxInclude=" + prefxInclude +
@@ -565,9 +515,6 @@ public class TbSchoolDeclare implements Serializable {
         ", remark=" + remark +
         ", contactPerson=" + contactPerson +
         ", contactPersonPhone=" + contactPersonPhone +
-        ", isDeleted=" + isDeleted +
-        ", operator=" + operator +
-        ", creator=" + creator +
         ", createTime=" + createTime +
         ", updateTime=" + updateTime +
         ", street=" + street +
