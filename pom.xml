@@ -13,6 +13,8 @@
         <module>cv-clickhouse-sample</module>
         <module>cv-nacos-feign-sample</module>
         <module>cv-rocketmq-sample</module>
+        <module>cv-redis-sample</module>
+        <module>cv-elasticsearch-sample</module>
     </modules>
 
 
