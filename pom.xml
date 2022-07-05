@@ -15,6 +15,7 @@
         <module>cv-rocketmq-sample</module>
         <module>cv-redis-sample</module>
         <module>cv-elasticsearch-sample</module>
+        <module>cv-gateway-sample</module>
     </modules>
 
 
