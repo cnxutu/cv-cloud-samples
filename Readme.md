@@ -1,5 +1,7 @@
 
-hi, there! welcom to this area.
+hi, there! welcome to this area.
+喜欢新技术的整合与应用，没有最好的，只有最合适的～  :)
+
 # 常见技术的spring-boot集成
 
 ## 目前已完成集成案例

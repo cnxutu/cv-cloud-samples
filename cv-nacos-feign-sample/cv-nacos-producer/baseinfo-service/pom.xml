@@ -3,36 +3,32 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>cv-nacos-feign-sample</artifactId>
+        <artifactId>cv-nacos-producer</artifactId>
         <groupId>com.clearvision</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cv-nacos-consumer</artifactId>
+    <artifactId>baseinfo-service</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+
     <dependencies>
-
-
         <dependency>
             <groupId>com.clearvision</groupId>
             <artifactId>cv-cloud-common</artifactId>
             <version>1.0.0</version>
         </dependency>
 
-
         <dependency>
             <groupId>com.clearvision</groupId>
             <artifactId>baseinfo-api</artifactId>
             <version>1.0.0</version>
         </dependency>
-
-
 
 
         <dependency>
@@ -42,14 +38,7 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>com.clearvision</groupId>
-            <artifactId>cv-cloud-openfeign</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
-
-        <!--  解决springboot的版本冲突 jackson -->
+        <!-- jackson -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -66,17 +55,12 @@
             <version>2.13.3</version>
         </dependency>
 
-        <!--  解决nacos的冲突      -->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
-            <version>3.1.1</version>
-            <scope>compile</scope>
-            <optional>true</optional>
+            <groupId>com.clearvision</groupId>
+            <artifactId>cv-cloud-openfeign</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
     </dependencies>
-
-
 
 </project>

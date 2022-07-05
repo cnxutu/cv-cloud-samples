@@ -3,26 +3,34 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>cv-rocketmq-sample</artifactId>
+        <artifactId>cv-nacos-producer</artifactId>
         <groupId>com.clearvision</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cv-rocketmq-producer</artifactId>
+    <artifactId>baseinfo-api</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+
     <dependencies>
+
         <dependency>
             <groupId>com.clearvision</groupId>
-            <artifactId>cv-cloud-alibaba-rocketmq</artifactId>
+            <artifactId>cv-cloud-common</artifactId>
             <version>1.0.0</version>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>com.clearvision</groupId>
+            <artifactId>cv-cloud-openfeign</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+    </dependencies>
 
 </project>
