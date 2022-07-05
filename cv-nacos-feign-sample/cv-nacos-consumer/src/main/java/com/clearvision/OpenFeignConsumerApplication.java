@@ -9,10 +9,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 
 /**
- * 描述：入口类
- *
- * @author ay
- * @since 2020-07-24
+ * @author xutu
+ * @since 2022-07-05
  */
 @EnableDiscoveryClient
 @SpringBootApplication

@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * 描述：用户接口
  *
- * @author ay
- * @since 2020-07-24
+ * @author xutu
+ * @since 2022-07-05
  */
 @FeignClient(name = "nacos-feign-provider")
 public interface BaseInfoFeignApi {
