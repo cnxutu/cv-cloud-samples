@@ -16,4 +16,36 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>2.6.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.clearvision</groupId>
+            <artifactId>cv-cloud-redis</artifactId>
+<!--            <scope>system</scope>-->
+            <version>1.0.0</version>
+<!--            <systemPath>/Users/xutu/.m2/common_repository/com/clearvision/cv-cloud-redis/1.0.0/cv-cloud-redis-1.0.0.jar</systemPath>-->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>2.6.9</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+        </dependency>
+
+
+    </dependencies>
+
 </project>
