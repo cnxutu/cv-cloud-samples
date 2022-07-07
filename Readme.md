@@ -18,12 +18,16 @@ hi, there! welcome to this area.
     1. nacos服务注册发现，生成者，消费者
     2. openfeign rpc调用
     3. rpc接口模块聚合（统一路径，接口统一聚合，减少代码冗余）
+    
+* springboot + redissson 
+    1. 进行redisson的技术集成，包括对redis常见数据类型的操作测试，即常见的 String,Hash,List等的数据类型的操作测试
 
 
 ## 待完成集成案例
 * spring cloud gateway 模块完善
 * springboot + rocketmq
 * springboot + redis
+  * redisson 分布式锁的实现【待完善】
 * springboot + elasticsearch
 
 
