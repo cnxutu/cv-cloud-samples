@@ -4,7 +4,9 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: localhost:8848
+#        server-addr: localhost:8848
+        server-addr: nacos.qdsgvision.com:80
+        namespace: 04a67d50-e56c-455d-b5ad-516836382a7c
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
