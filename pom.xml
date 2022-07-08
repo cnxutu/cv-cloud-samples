@@ -16,6 +16,8 @@
         <module>cv-redis-sample</module>
         <module>cv-elasticsearch-sample</module>
         <module>cv-gateway-sample</module>
+        <module>cv-sentinel-sample</module>
+        <module>cv-seata-sample</module>
     </modules>
 
 
