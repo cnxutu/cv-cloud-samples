@@ -1,0 +1,10 @@
+
+
+
+
+
+#rocketmq:
+#  name-server: 127.0.0.1:9876
+#  consumer:
+#    group: use-spring-boot-access-rocketmq1
+#    topic: use-spring-boot-access-rocketmq1
