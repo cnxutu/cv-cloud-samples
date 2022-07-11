@@ -3,10 +3,7 @@
 <mapper namespace="com.clearvision.clickhousesample.mapper.OrderMapper">
 
 
-
-
-
-
-
-
+    <insert id="addColumnTest">
+        ALTER TABLE helloworld.tb_order  ADD COLUMN  #{columnName} UInt32
+    </insert>
 </mapper>
