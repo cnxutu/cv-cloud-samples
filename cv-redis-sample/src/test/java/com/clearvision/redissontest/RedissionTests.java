@@ -7,16 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cache.interceptor.SimpleKey;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.TimeUnit;
+import java.util.*;
+import java.util.concurrent.*;
 
 
 @SpringBootTest
 class RedissionTests {
-
 
 
     @Autowired
@@ -24,6 +20,10 @@ class RedissionTests {
 
     @Test
     void contextLoads() {
+
+
+
+
 
         //1. stirng
         RBucket<String> s1 = redissonClient.getBucket("cellphone");
@@ -79,7 +79,80 @@ class RedissionTests {
         System.out.println("输出类型：");
         System.out.println(l);
 
+        //5. 基于redisson 的互斥锁的分布式锁实现
+
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        //多线程测试
+        for (int i = 0; i < 6; i++) {
+            executorService.submit(new ThreadTest());
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println("=============================");
+
+        // 互斥锁测试
+        for (int i = 0; i < 5; i++) {
+            executorService.submit(new MultipleThreadsRunTest());
+            try {
+                Thread.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        try {
+            Thread.sleep(20000);
+            System.out.println("主程序结束...");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
+
+    class ThreadTest implements Runnable {
+
+        @Override
+        public void run() {
+            System.out.println(Thread.currentThread().getName()+"多线程开始....");
+            try {
+                Thread.sleep(10000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread().getName()+"多线程结束....");
+        }
+    }
+
+
+
+    class MultipleThreadsRunTest implements Runnable {
+
+        @Override
+        public void run() {
+            System.out.println(Thread.currentThread().getName()+ " 线程开始... ");
+            RReadWriteLock readWriteLock = redissonClient.getReadWriteLock("rw-lock");
+            try {
+                boolean b1 = readWriteLock.writeLock().tryLock(1, 5, TimeUnit.SECONDS);
+                if (b1){
+                    System.out.println(Thread.currentThread().getName()+ " 读取锁成功... ");
+                    Thread.sleep(4000);
+                }else {
+                    System.out.println(Thread.currentThread().getName()+ " 读取锁失败... ");
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }finally {
+                System.out.println(Thread.currentThread().getName() + " 线程结束，准备释放锁... ");
+                readWriteLock.writeLock().unlock();
+            }
+
+        }
+    }
 
 }
