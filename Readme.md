@@ -23,10 +23,12 @@ hi, there! welcome to this area.
     1. 进行redisson的技术集成，包括对redis常见数据类型的操作测试，即常见的 String,Hash,List等的数据类型的操作测试
     2. 添加各类型操作下的过期时间设定及 redisson的分布式自增实现类的计数操作
 
+* spring boot + spring cloud stream rocketmq 
+    1. 生产者/消费者 代码实现，topic/group 配置
+
 
 ## 待完成集成案例
 * spring cloud gateway 模块完善
-* spring boot + rocketmq
 * spring cloud + sentinel
 * spring cloud + seata
 * spring boot + redis
