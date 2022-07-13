@@ -74,6 +74,13 @@
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
+        <!--   解决loadbalance rpc调用问题 由于客户端的选择问题，重制客户端问题解决     -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-context-support</artifactId>-->
+<!--            <version>5.3.21</version>-->
+<!--        </dependency>-->
+
 
     </dependencies>
 
