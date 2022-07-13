@@ -16,6 +16,14 @@ spring:
 server:
   port: 8081
 
+#请求处理的超时时间
+ribbon:
+  ReadTimeout: 120000
+  ConnectTimeout: 30000
+  eager-load:
+    # 让每个服务启动的时候就直接去初始化Ribbon相关的组件，避免第一次请求的时候才开始初始化，即饥饿加载，默认false
+    enabled: true
+
 # actuator  相关
 management:
   endpoints:
