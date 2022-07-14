@@ -1,6 +1,8 @@
 package com.clearvision.redissontest;
 
 
+import com.google.common.base.Joiner;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.redisson.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +22,6 @@ class RedissionTests {
 
     @Test
     void contextLoads() {
-
 
 
 
@@ -112,6 +113,15 @@ class RedissionTests {
         }
 
 
+        //新增 redis文件夹 实现
+        RBucket<String> bucket = redissonClient.getBucket(createNameSpace("dir1","realKey"));
+        bucket.set("new world2");
+
+
+    }
+
+    private String createNameSpace(String namesapce, String redisKey) {
+        return Joiner.on(":").join(StringUtils.isNotEmpty(namesapce) ? namesapce : "", StringUtils.isNotEmpty(redisKey) ? redisKey : "");
     }
 
 
@@ -119,35 +129,34 @@ class RedissionTests {
 
         @Override
         public void run() {
-            System.out.println(Thread.currentThread().getName()+"多线程开始....");
+            System.out.println(Thread.currentThread().getName() + "多线程开始....");
             try {
                 Thread.sleep(10000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(Thread.currentThread().getName()+"多线程结束....");
+            System.out.println(Thread.currentThread().getName() + "多线程结束....");
         }
     }
-
 
 
     class MultipleThreadsRunTest implements Runnable {
 
         @Override
         public void run() {
-            System.out.println(Thread.currentThread().getName()+ " 线程开始... ");
+            System.out.println(Thread.currentThread().getName() + " 线程开始... ");
             RReadWriteLock readWriteLock = redissonClient.getReadWriteLock("rw-lock");
             try {
                 boolean b1 = readWriteLock.writeLock().tryLock(1, 5, TimeUnit.SECONDS);
-                if (b1){
-                    System.out.println(Thread.currentThread().getName()+ " 读取锁成功... ");
+                if (b1) {
+                    System.out.println(Thread.currentThread().getName() + " 读取锁成功... ");
                     Thread.sleep(4000);
-                }else {
-                    System.out.println(Thread.currentThread().getName()+ " 读取锁失败... ");
+                } else {
+                    System.out.println(Thread.currentThread().getName() + " 读取锁失败... ");
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
-            }finally {
+            } finally {
                 System.out.println(Thread.currentThread().getName() + " 线程结束，准备释放锁... ");
                 readWriteLock.writeLock().unlock();
             }
