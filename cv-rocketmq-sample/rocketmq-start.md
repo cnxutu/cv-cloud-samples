@@ -1,6 +1,6 @@
 
 
-# Rocketmq Strart
+# Rocketmq Start
 
 ## Start Name Server
 >nohup sh bin/mqnamesrv &
