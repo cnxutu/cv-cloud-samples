@@ -1,5 +1,7 @@
 package com.clearvision.mybatissample.entity;
 
+import com.baomidou.mybatisplus.annotation.FieldStrategy;
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.clearvision.common.pojo.po.BaseDO;
 
@@ -22,7 +24,12 @@ public class TbSchoolDeclare extends BaseDO implements Serializable  {
 
     /**
      * 机构名称
+     * FieldStrategy.DEFAULT: 默认
+     * FieldStrategy.IGNORED: 忽略为空的判断，将该字段设置为null也会更新表中的数据
+     * FieldStrategy.NOT_EMPTY: 非空判断，为null，为空串的忽略，就是如果设置值为null，""，不会更新数据库
+     * FieldStrategy.NOT_NULL: 非NULL判断，忽略null的字段，不忽略""
      */
+    @TableField(updateStrategy = FieldStrategy.IGNORED)
     private String schoolName;
 
     /**
