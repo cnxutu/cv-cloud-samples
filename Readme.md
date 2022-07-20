@@ -12,7 +12,8 @@ hi, there! welcome to this area.
     3. 支持 统一返回的 VO 实现
     4. 支持 自定义异常枚举类，及异常的全局统一处理
 * spring boot + clickhouse +  druid + mybatis plus
-    1. 支持 mybatis plus 对 clickhouse 的增删改查操作
+    1. 支持 mybatis plus 对 clickhouse 的数据增删改查操作
+    2. 支持 jdbc 对 clickhosue进行表结构的修改(增/删)操作
   
 * spring cloud + nacos + openfeign + mybatis plus
     1. nacos服务注册发现，生成者，消费者
