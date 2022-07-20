@@ -33,6 +33,8 @@ hi, there! welcome to this area.
 * spring cloud + sentinel
 * spring cloud + seata
 * spring boot + elasticsearch
+* shardingsphere 集成
+* 
 
 
 

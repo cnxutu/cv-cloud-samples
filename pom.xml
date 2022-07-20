@@ -18,6 +18,7 @@
         <module>cv-gateway-sample</module>
         <module>cv-sentinel-sample</module>
         <module>cv-seata-sample</module>
+        <module>cv-shardingsphere-sample</module>
     </modules>
 
 
