@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: sharding-sphere-demo
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.20.186:33061/dp_base?allowMultiQueries=true&autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: dp_app_master
+    password: qdsg2021
+  main:
+    allow-bean-definition-overriding: true
+server:
+  port: 8081
+
+# actuator  相关
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - "*"
+#        include: prometheus
+#        include: "*"
+    health:
+      show-details: always
+  health:
+    diskspace:
+      enabled: false
+
+
+
+# Logger Config
+logging:
+  level:
+    com.clearvision.mybatissample: debug
+
