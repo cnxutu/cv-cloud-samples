@@ -70,6 +70,12 @@ public class TbSchoolDeclareController {
         return Result.succeed(i);
     }
 
+    @GetMapping("/batchInsert")
+    public Result batchInsert(){
+        return schoolDeclareService.batchInsert();
+    }
+
+
     private TbSchoolDeclare schoolAllSet() {
         TbSchoolDeclare schoolDeclareDO = new TbSchoolDeclare();
         schoolDeclareDO.setSchoolName("");

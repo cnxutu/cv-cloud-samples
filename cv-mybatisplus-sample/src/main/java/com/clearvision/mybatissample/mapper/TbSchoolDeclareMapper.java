@@ -1,8 +1,8 @@
 package com.clearvision.mybatissample.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.clearvision.mybatissample.entity.TbSchoolDeclare;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.clearvision.mybatissample.pojo.query.TestQuery;
 import org.apache.ibatis.annotations.Param;
 

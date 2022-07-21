@@ -1,6 +1,7 @@
 package com.clearvision.mybatissample.service;
 
 import com.clearvision.common.pojo.vo.PageInfoVO;
+import com.clearvision.common.pojo.vo.Result;
 import com.clearvision.mybatissample.entity.TbSchoolDeclare;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.clearvision.mybatissample.pojo.query.TestQuery;
@@ -18,4 +19,7 @@ import java.util.List;
 public interface ITbSchoolDeclareService extends IService<TbSchoolDeclare> {
 
     PageInfoVO<List<TbSchoolDeclare>> getPageList(TestQuery query);
+
+    Result batchInsert();
+
 }
