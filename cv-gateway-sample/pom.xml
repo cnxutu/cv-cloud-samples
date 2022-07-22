@@ -16,4 +16,19 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.clearvision</groupId>
+            <artifactId>cv-cloud-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.clearvision</groupId>
+            <artifactId>cv-cloud-alibaba-nacos</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
+
 </project>
