@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 
 @SpringBootApplication
 @ServletComponentScan("com.clearvision")
-@MapperScan("com.clearvision.mybatissample.mapper")
+@MapperScan("com.clearvision.shardingspheresample.mapper")
 public class ShardingsphereSampleApplication {
 
     public static void main(String[] args) {
