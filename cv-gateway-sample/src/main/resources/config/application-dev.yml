@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.20.49:8848
+        namespace: public
+      config:
+        server-addr: 192.168.20.49:8848
+        namespace: public
+nacos:
+  gateway:
+    route:
+      config:
+        data-id: gateway-router
+        group: DEFAULT_GROUP
+
+management:
+  endpoint:
+    web:
+      exposure:
+        include: *
+
