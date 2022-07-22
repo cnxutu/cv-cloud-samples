@@ -24,6 +24,7 @@ hi, there! welcome to this area.
     1. 进行redisson的技术集成，包括对redis常见数据类型的操作测试，即常见的 String,Hash,List等的数据类型的操作测试
     2. 添加各类型操作下的过期时间设定及 redisson的分布式自增实现类的计数操作
     3. redisson 分布式锁的实现（基于读写锁中的write锁完成的 业务互斥锁 操作）
+    4. 添加namespace工具类，即可生成redis desktop的文件夹，方便键值的归类
 
 * spring boot + spring cloud stream rocketmq 
     1. 生产者/消费者 代码实现，topic/group 配置
