@@ -19,7 +19,7 @@
         <module>cv-sentinel-sample</module>
         <module>cv-seata-sample</module>
         <module>cv-shardingsphere-sample</module>
-        <module>cv-springsecurity-oauth2-sample</module>
+        <module>cv-oauth2-springsecurity-sample</module>
         <module>cv-excel-sample</module>
     </modules>
 
