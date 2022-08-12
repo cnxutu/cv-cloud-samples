@@ -9,26 +9,20 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cv-gateway-sample</artifactId>
-
+    <artifactId>cv-cloud-alibaba</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>cv-nacos-feign-sample</module>
+        <module>cv-rocketmq-sample</module>
+        <module>cv-gateway-sample</module>
+        <module>cv-sentinel-sample</module>
+        <module>cv-seata-sample</module>
+        <module>cv-oauth2-springsecurity-sample</module>
+    </modules>
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.clearvision</groupId>
-            <artifactId>cv-cloud-common</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.clearvision</groupId>
-            <artifactId>cv-cloud-alibaba-nacos</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-    </dependencies>
-
 
 </project>
