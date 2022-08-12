@@ -10,6 +10,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>cv-cloud-tools</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>cv-excel-sample</module>
+        <module>cv-qrcode-sample</module>
+        <module>cv-word-sample</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
