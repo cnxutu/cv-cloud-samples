@@ -36,7 +36,11 @@ hi, there! welcome to this area.
 * spring cloud + seata
 * spring boot + elasticsearch
 * shardingsphere 集成
-* 
+* mango db 集成
+
+* Uitls - easy excel 使用模版
+* Uitls - qrcode 使用模板
+* Uitls -word 使用模板
 
 
 ## 浅记
