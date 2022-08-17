@@ -1,3 +1,9 @@
+mode:
+  type: Standalone
+  repository:
+    type: File
+  overwrite: false
+
 spring:
   shardingsphere:
     datasource:
@@ -20,69 +26,66 @@ spring:
         url: jdbc:mysql://127.0.0.1:3306/datasource_2?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
         username: root
         password: 1qaz2wsx
-#    rules:
-#    - !SHARDING
-
-    sharding:
-      tables:
-        t_order:
-          actualDataNodes: ds_${2021..2022}.t_order_${0..2}
-          tableStrategy:
-            standard:
-              shardingColumn: order_id
-              shardingAlgorithmName: t-order-inline
-          keyGenerateStrategy:
-            column: order_id
-            keyGeneratorName: snowflake
-        t_order_item:
-          actualDataNodes: ds_${0..1}.t_order_item_${0..1}
-          tableStrategy:
-            standard:
-              shardingColumn: order_id
-              shardingAlgorithmName: t_order-item-inline
-          keyGenerateStrategy:
-            column: order_item_id
-            keyGeneratorName: snowflake
-        t_account:
-          actualDataNodes: ds_${0..1}.t_account_${0..1}
-          tableStrategy:
-            standard:
-              shardingAlgorithmName: t-account-inline
-          keyGenerateStrategy:
-            column: account_id
-            keyGeneratorName: snowflake
-      defaultShardingColumn: account_id
-      bindingTables:
-        - t_order,t_order_item
-      broadcastTables:
-        - t_address
-      defaultDatabaseStrategy:
-        standard:
-          shardingColumn: user_id
-          shardingAlgorithmName: database-inline
-      defaultTableStrategy:
-        none:
-
-      shardingAlgorithms:
-        database-inline:
-          type: INLINE
-          props:
-            algorithm-expression: ds_${user_id % 3} #database策略 ds_? 数据库后缀策略选择
-        t-order-inline:
-          type: INLINE
-          props:
-            algorithm-expression: t_order_${order_id % 3} #table策略 tb_order_？数据库表后缀策略选择
-        t_order-item-inline:
-          type: INLINE
-          props:
-            algorithm-expression: t_order_item_${order_id % 2}
-        t-account-inline:
-          type: INLINE
-          props:
-            algorithm-expression: t_account_${account_id % 2}
-#      keyGenerators:
-#        snowflake:
-#          type: SNOWFLAKE
+    rules:
+      sharding:
+        tables:
+          t_order:
+            actualDataNodes: ds_${2021..2022}.t_order_${0..2}
+            tableStrategy:
+              standard:
+                shardingColumn: order_id
+                shardingAlgorithmName: t-order-inline
+            keyGenerateStrategy:
+              column: order_id
+              keyGeneratorName: snowflake
+          t_order_item:
+            actualDataNodes: ds_${0..1}.t_order_item_${0..1}
+            tableStrategy:
+              standard:
+                shardingColumn: order_id
+                shardingAlgorithmName: t_order-item-inline
+            keyGenerateStrategy:
+              column: order_item_id
+              keyGeneratorName: snowflake
+          t_account:
+            actualDataNodes: ds_${0..1}.t_account_${0..1}
+            tableStrategy:
+              standard:
+                shardingAlgorithmName: t-account-inline
+            keyGenerateStrategy:
+              column: account_id
+              keyGeneratorName: snowflake
+        defaultShardingColumn: account_id
+        bindingTables:
+          - t_order,t_order_item
+        broadcastTables:
+          - t_address
+        defaultDatabaseStrategy:
+          standard:
+            shardingColumn: user_id
+            shardingAlgorithmName: database-inline
+        defaultTableStrategy:
+          none:
+        shardingAlgorithms:
+          database-inline:
+            type: INLINE
+            props:
+              algorithm-expression: ds_${user_id % 3} #database策略 ds_? 数据库后缀策略选择
+          t-order-inline:
+            type: INLINE
+            props:
+              algorithm-expression: t_order_${order_id % 3} #table策略 tb_order_？数据库表后缀策略选择
+          t_order-item-inline:
+            type: INLINE
+            props:
+              algorithm-expression: t_order_item_${order_id % 2}
+          t-account-inline:
+            type: INLINE
+            props:
+              algorithm-expression: t_account_${account_id % 2}
+    #      keyGenerators:
+    #        snowflake:
+    #          type: SNOWFLAKE
 
     props:
       sql-show: true

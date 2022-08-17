@@ -18,10 +18,17 @@
 
 
     <dependencies>
+
         <dependency>
             <groupId>com.clearvision</groupId>
             <artifactId>cv-cloud-alibaba-rocketmq</artifactId>
             <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+            <version>2021.0.1.0</version>
         </dependency>
     </dependencies>
 
