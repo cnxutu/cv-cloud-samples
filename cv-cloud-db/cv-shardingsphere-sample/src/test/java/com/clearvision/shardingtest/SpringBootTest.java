@@ -1,10 +1,10 @@
 package com.clearvision.shardingtest;
 
-import com.clearvision.common.enums.ErrorCodeEnum;
-import com.clearvision.common.exception.CustomBusinessException;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.clearvision.shardingspheresample.mapper.OrderMapper;
 import com.clearvision.shardingspheresample.pojo.entity.Order;
 import com.clearvision.shardingspheresample.service.IOrderService;
+import com.sun.org.apache.xpath.internal.operations.Or;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.util.Date;
+import java.util.List;
 
 @org.springframework.boot.test.context.SpringBootTest
 @Slf4j
@@ -27,13 +28,80 @@ public class SpringBootTest {
     @Resource
     private OrderMapper orderMapper;
 
+    @Test
+    public void testDataBase(){
+        System.out.println(" TEST 2020 ...");
+        List<Order> orders = orderMapper.selectList(Wrappers.<Order>lambdaQuery()
+                .eq(Order::getUserId, 2020)
+                .eq(Order::getOrderId,1)
+        );
+        orders.forEach(System.out::println);
+
+        Order order = new Order();
+        order.setUserId(2020L);
+        int insert = orderMapper.insert(order);
+
+
+        System.out.println(" TEST 2021 ...");
+        List<Order> orders1 = orderMapper.selectList(Wrappers.<Order>lambdaQuery()
+                .eq(Order::getUserId, 2021)
+                .eq(Order::getOrderId,2)
+        );
+        orders1.forEach(System.out::println);
+        Order order1 = new Order();
+        order1.setUserId(2021L);
+        int insert1 = orderMapper.insert(order1);
+
+        System.out.println(" TEST 2022 ...");
+        List<Order> orders2 = orderMapper.selectList(Wrappers.<Order>lambdaQuery()
+                .eq(Order::getUserId, 2022)
+                .eq(Order::getOrderId,3)
+        );
+        orders2.forEach(System.out::println);
+        orders2.forEach(System.out::println);
+        Order order2 = new Order();
+        order2.setUserId(2022L);
+        int insert2 = orderMapper.insert(order2);
+    }
+
+
+
+
+
+
+
+
+
+    @Test
+    public void test02() {
+
+        System.out.println("test 1 ...");
+        List<Order> orders = orderMapper.selectList(Wrappers.<Order>lambdaQuery()
+                .eq(Order::getIsDeleted, 1)
+                .eq(Order::getUserId, 2021)
+                .eq(Order::getOrderId, 1)
+                .eq(Order::getId, 1)
+        );
+
+        orders.forEach(System.out::println);
+        System.out.println("test 2 ...");
+        List<Order> orders1 = orderMapper.selectList(Wrappers.<Order>lambdaQuery()
+                .eq(Order::getIsDeleted, 1)
+                .eq(Order::getUserId, 2022)
+                .eq(Order::getOrderId, 2)
+                .eq(Order::getId, 1)
+        );
+
+        orders1.forEach(System.out::println);
+
+    }
+
 
     @Test
     public void test01() {
 
         //聚合维度查询
 //        examEyesightResultBirthDao.testShardingSqlGroup()
-
 
 
         //聚合查询测试
@@ -50,21 +118,15 @@ public class SpringBootTest {
         // 数据库表 t_order_${order_id % 3}
         for (int i = 1; i < 4; i++) {
             Order order = new Order();
-            order.setOrderName("测试数据路由"+i);
+            order.setOrderName("测试数据路由" + i);
             order.setUserId(Long.valueOf(i));
             order.setOrderId(Long.valueOf(i));
             int insert = orderMapper.insert(order);
-            if (insert<1){
-                throw new CustomBusinessException(ErrorCodeEnum.OPERATION_FAIL);
+            if (insert < 1) {
+//                throw new CustomBusinessException(ErrorCodeEnum.OPERATION_FAIL);
             }
         }
         System.out.println("测试结束...");
-
-
-
-
-
-
 
 
         //插入测试

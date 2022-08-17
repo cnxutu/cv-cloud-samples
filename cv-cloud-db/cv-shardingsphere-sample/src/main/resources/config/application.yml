@@ -2,6 +2,9 @@ server:
   port: 8081
 
 spring:
+  shardingsphere:
+    mode:
+      type: Memory
   profiles:
     active: dev
   application:
@@ -9,11 +12,11 @@ spring:
   main:
     allow-bean-definition-overriding: true
 #  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    type: com.alibaba.druid.pool.DruidDataSource
-#    url: jdbc:mysql://192.168.20.186:33061/dp_base?allowMultiQueries=true&autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
-#    username: dp_app_master
-#    password: qdsg2021
+#      type: com.zaxxer.hikari.HikariDataSource
+#      driverClassName: com.mysql.cj.jdbc.Driver
+#      jdbcUrl: jdbc:mysql://localhost:3306/datasource_0?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+#      username: root
+#      password: 1qaz2wsx
 
 
 
@@ -39,3 +42,5 @@ logging:
   level:
     com.clearvision.shardingspheresample: debug
 
+mybatis-plus:
+  mapper-locations=classpath:mapper/*.xml:

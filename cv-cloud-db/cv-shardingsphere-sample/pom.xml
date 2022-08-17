@@ -19,17 +19,61 @@
 
     <dependencies>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.shardingsphere/shardingsphere-jdbc-core-spring-boot-starter -->
         <dependency>
             <groupId>org.apache.shardingsphere</groupId>
-            <artifactId>shardingsphere-jdbc-core</artifactId>
+            <artifactId>shardingsphere-jdbc-core-spring-boot-starter</artifactId>
             <version>5.1.2</version>
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>checker-qual</artifactId>-->
+<!--                    <groupId>org.checkerframework</groupId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
         </dependency>
 
         <dependency>
-            <groupId>com.clearvision</groupId>
-            <artifactId>cv-cloud-common</artifactId>
-            <version>1.0.0</version>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>sharding-jdbc-core</artifactId>
+            <version>4.0.0-RC2</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>3.5.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>HikariCP</artifactId>
+                    <groupId>com.zaxxer</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>spring-boot</artifactId>
+                    <groupId>org.springframework.boot</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+            <version>8.0.28</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
+        </dependency>
+
+<!--        shardingsphere会自动创建数据库连接池，防止冲突，注释druid的连接池         -->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba</groupId>-->
+<!--            <artifactId>druid</artifactId>-->
+<!--            <version>1.2.9</version>-->
+<!--        </dependency>-->
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -57,6 +101,11 @@
             <artifactId>spring-test</artifactId>
             <version>5.3.21</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>sharding-core-api</artifactId>
+            <version>4.0.0-RC2</version>
         </dependency>
 
 

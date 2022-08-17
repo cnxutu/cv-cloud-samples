@@ -1,0 +1,61 @@
+
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    url: jdbc:mysql://192.168.20.186:33061/dp_base?allowMultiQueries=true&autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+#    username: dp_app_master
+#    password: qdsg2021
+
+
+spring:
+  shardingsphere:
+#    sharding:
+#      mode:
+#        type: Memory
+#      default-data-source-name:
+    datasource:
+      names: ds_0, ds_1
+      ds_0:
+        type: com.zaxxer.hikari.HikariDataSource
+#        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/datasource_0?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password: 1qaz2wsx
+      ds_1:
+        type: com.zaxxer.hikari.HikariDataSource
+#        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/datasource_1?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password: 1qaz2wsx
+    sharding:
+      tables:
+        t_order:
+          actualDataNodes: ds_${0..1}.t_order_${0..1}
+          tableStrategy:
+            standard:
+              shardingColumn: order_id
+              shardingAlgorithmName: t-order-inline
+          keyGenerateStrategy:
+            column: order_id
+            keyGeneratorName: snowflake
+
+      defaultDatabaseStrategy:
+        standard:
+          shardingColumn: user_id
+          shardingAlgorithmName: database-inline
+
+      shardingAlgorithms:
+        database-inline:
+          type: INLINE
+          props:
+            algorithm-expression: ds_${user_id % 2}
+        t-order-inline:
+          type: INLINE
+          props:
+            algorithm-expression: t_order_${order_id % 2}
+    props:
+      sql-show: true
+  # 配置其他数据源
