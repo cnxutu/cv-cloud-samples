@@ -30,9 +30,10 @@ public class OrderController {
     private IOrderService orderService;
 
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
-    public List<Order> getOrder(@RequestParam("orderId") Long orderId) {
+    public List<Order> getOrder(@RequestParam("orderId") Long orderId, @RequestParam("userId") Long userId) {
         List<Order> list = orderService.list(Wrappers.<Order>lambdaQuery()
                 .eq(Order::getOrderId, orderId)
+                .eq(Order::getUserId,userId)
         );
         return list;
     }

@@ -29,7 +29,7 @@ spring:
     sharding:
       tables:
         t_order:
-          actual-data-nodes: ds-test-$->{2021..2022}.t_order_->{0..3}
+          actual-data-nodes: ds-test-${2021..2022}.t_order_${0..3}
           database-strategy:
             standard:
               sharding-column: order_id    # 分片字段（分片键）

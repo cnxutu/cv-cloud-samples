@@ -1,5 +1,6 @@
 //package com.clearvision.shardingspheresample.common.config;
 //
+//import org.apache.shardingsphere.driver.api.ShardingSphereDataSourceFactory;
 //import org.apache.shardingsphere.sharding.api.config.ShardingRuleConfiguration;
 //import org.apache.shardingsphere.sharding.api.config.rule.ShardingTableRuleConfiguration;
 //import org.apache.shardingsphere.sharding.api.config.strategy.keygen.KeyGenerateStrategyConfiguration;
