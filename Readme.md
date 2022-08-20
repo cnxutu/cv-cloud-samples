@@ -32,6 +32,8 @@ hi, there! welcome to this area.
 * shardingsphere 集成
     1. shardingsphere-jdbc的分库分表的功能集成
 
+* 常用 工具类
+    1. easy excel 基础导入/导出 demo
 
 ## 待完成集成案例
 * spring cloud gateway 模块完善
@@ -41,7 +43,7 @@ hi, there! welcome to this area.
 
 * mango db 集成
 
-* Uitls - easy excel 使用模版
+
 * Uitls - qrcode 使用模板
 * Uitls -word 使用模板
 
