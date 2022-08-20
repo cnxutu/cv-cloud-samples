@@ -11,19 +11,19 @@ spring:
       ds-test-2020:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/datasource_0?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/datasource_0?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
         username: root
         password: 1qaz2wsx
       ds-test-2021:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/datasource_1?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/datasource_1?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
         username: root
         password: 1qaz2wsx
       ds-test-2022:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/datasource_2?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        jdbc-url: jdbc:mysql://127.0.0.1:3306/datasource_2?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
         username: root
         password: 1qaz2wsx
     sharding:

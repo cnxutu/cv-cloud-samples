@@ -6,7 +6,7 @@ spring:
     mode:
       type: Memory
   profiles:
-#    active: test
+#    active: dev
     active: sharding-databases
   application:
     name: sharding-sphere-demo

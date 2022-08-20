@@ -17,10 +17,14 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/order")
 public class TestController {
+
+
+    private List<Long> longList;
 
     @Resource
     private IOrderService orderService;
