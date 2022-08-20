@@ -1,7 +1,6 @@
 package com.clearvision.excelsample.pojo.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.qdsg.common.pojo.entity.BaseDO;
 import lombok.Data;
 
 import java.io.Serializable;
