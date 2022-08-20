@@ -9,35 +9,45 @@ spring:
     datasource:
       names: ds-test-2020,ds-test-2021,ds-test-2022
       ds-test-2020:
-        type: com.zaxxer.hikari.HikariDataSource
+        type: com.alibaba.druid.pool.DruidDataSource
+#        type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/datasource_0?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+        url: jdbc:mysql://127.0.0.1:3306/datasource_0?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
         username: root
         password: 1qaz2wsx
       ds-test-2021:
-        type: com.zaxxer.hikari.HikariDataSource
+        type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/datasource_1?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+        url: jdbc:mysql://127.0.0.1:3306/datasource_1?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
         username: root
         password: 1qaz2wsx
       ds-test-2022:
-        type: com.zaxxer.hikari.HikariDataSource
+        type: com.alibaba.druid.pool.DruidDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://127.0.0.1:3306/datasource_2?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
+        url: jdbc:mysql://127.0.0.1:3306/datasource_2?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
         username: root
         password: 1qaz2wsx
     sharding:
       tables:
         t_order:
-          actual-data-nodes: ds-test-${2021..2022}.t_order_${0..3}
+          actualDataNodes: ds-test-${2020..2022}.t_order_${0..3}
+#          actualDataNodes: ds-test-${2020..2022}.t_order_${0..3}
           database-strategy:
-            standard:
-              sharding-column: order_id    # 分片字段（分片键）
-              preciseAlgorithmClassName: com.clearvision.shardingspheresample.common.config.DatabaseShardingConfig
-          table-strategy:
             inline:
-              sharding-column: order_id
-              algorithm-expression: tb_order_$->{order_id % 3}
+              sharding-column: status
+              algorithm-expression: ds-test-$->{status}
+#            standard:
+#              sharding-column: order_id
+#              preciseAlgorithmClassName: com.clearvision.shardingspheresample.common.config.DatabaseShardingConfig
+#              algorithm-expression: ds-test-$->{order_id}
+#              algorithm-expression: ds-test-$->{user_id}
+          table-strategy:
+#            standard:
+#              sharding-column: user_id
+#              precise-algorithm-class-name: com.clearvision.shardingspheresample.common.config.DatabaseShardingConfig
+            inline:
+              sharding-column: user_id
+              algorithm-expression: tb_order_$->{user_id % 4}
 #      default-database-strategy:
 #        inline:
 #          sharding-column: user_id
@@ -121,4 +131,6 @@ spring:
 #            type: SNOWFLAKE
     props:
       sql-show: true
-    enabled: true
+#      sql:
+#        show: true
+#    enabled: true

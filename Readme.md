@@ -29,13 +29,16 @@ hi, there! welcome to this area.
 * spring boot + spring cloud stream rocketmq 
     1. 生产者/消费者 代码实现，topic/group 配置
 
+* shardingsphere 集成
+    1. shardingsphere-jdbc的分库分表的功能集成
+
 
 ## 待完成集成案例
 * spring cloud gateway 模块完善
 * spring cloud + sentinel
 * spring cloud + seata
 * spring boot + elasticsearch
-* shardingsphere 集成
+
 * mango db 集成
 
 * Uitls - easy excel 使用模版

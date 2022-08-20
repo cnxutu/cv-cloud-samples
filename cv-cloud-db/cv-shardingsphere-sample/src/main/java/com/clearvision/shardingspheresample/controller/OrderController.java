@@ -1,5 +1,6 @@
 package com.clearvision.shardingspheresample.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.clearvision.shardingspheresample.pojo.entity.Order;
 import com.clearvision.shardingspheresample.service.IOrderService;
@@ -30,11 +31,11 @@ public class OrderController {
     private IOrderService orderService;
 
     @RequestMapping(value = "/detail", method = RequestMethod.GET)
-    public List<Order> getOrder(@RequestParam("orderId") Long orderId, @RequestParam("userId") Long userId) {
-        List<Order> list = orderService.list(Wrappers.<Order>lambdaQuery()
-                .eq(Order::getOrderId, orderId)
-                .eq(Order::getUserId,userId)
-        );
+    public List<Order> getOrder(@RequestParam("status") Integer status, @RequestParam("userId") Long userId) {
+        QueryWrapper<Order> eq = Wrappers.<Order>query()
+                .eq("status", status)
+                .eq("user_id", userId);
+        List<Order> list = orderService.list(eq);
         return list;
     }
 
