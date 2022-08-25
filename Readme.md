@@ -37,6 +37,7 @@ hi, there! welcome to this area.
 
 ## 待完成集成案例
 * spring cloud gateway 模块完善
+* spring boot + rocketmq 
 * spring cloud + sentinel
 * spring cloud + seata
 * spring boot + elasticsearch
@@ -54,6 +55,6 @@ hi, there! welcome to this area.
 > 3). rpc提供的接口与服务本身的接口本不应该相互耦合，对于简单的查询，可以直接再api的实现中，通过框架进行查询返回，对于复杂的查询，需要在业务里写相应的逻辑，跟原先的服务提供接口的逻辑肯定就不尽相同，而rpc的本身的逻辑，也不应与服务自身的接口复用接口，形成耦合。
 总结：最简单的学习，应该就是多问为什么？体会设计者的初衷，从而更好的在未来的场景中更好的运用既得的知识技术。
 
-
+### 
 
 

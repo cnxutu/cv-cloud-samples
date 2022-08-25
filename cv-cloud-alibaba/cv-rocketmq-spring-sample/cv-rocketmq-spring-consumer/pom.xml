@@ -3,27 +3,28 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>cv-cloud-samples</artifactId>
+        <artifactId>cv-rocketmq-spring-sample</artifactId>
         <groupId>com.clearvision</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cv-cloud-alibaba</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>cv-nacos-feign-sample</module>
-        <module>cv-rocketmq-stream-sample</module>
-        <module>cv-gateway-sample</module>
-        <module>cv-sentinel-sample</module>
-        <module>cv-seata-sample</module>
-        <module>cv-oauth2-springsecurity-sample</module>
-        <module>cv-rocketmq-spring-sample</module>
-    </modules>
+    <artifactId>cv-rocketmq-spring-consumer</artifactId>
+
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+
+    <dependencies>
+        <!-- rocket mq -->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+    </dependencies>
 
 </project>
