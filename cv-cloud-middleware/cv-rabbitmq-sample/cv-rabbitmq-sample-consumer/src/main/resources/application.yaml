@@ -1,0 +1,14 @@
+spring:
+  rabbitmq:
+    host: 192.168.50.101
+    port: 5672
+    username: qdst_2022
+    password: qdst_2022@
+    virtual-host: /
+    publisher-confirms: true
+    publisher-returns: true
+    listener:
+      simple:
+        max-concurrency: 5
+        concurrency: 5
+        acknowledge-mode: manual
