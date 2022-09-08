@@ -26,6 +26,9 @@ hi, there! welcome to this area.
     3. redisson 分布式锁的实现（基于读写锁中的write锁完成的 业务互斥锁 操作）
     4. 添加namespace工具类，即可生成redis desktop的文件夹，方便键值的归类
 
+* spring boot + rabbitmq
+   1. 订阅模式下的消费者和生产者demo
+
 * spring boot + spring cloud stream rocketmq 
     1. 生产者/消费者 代码实现，topic/group 配置
 
