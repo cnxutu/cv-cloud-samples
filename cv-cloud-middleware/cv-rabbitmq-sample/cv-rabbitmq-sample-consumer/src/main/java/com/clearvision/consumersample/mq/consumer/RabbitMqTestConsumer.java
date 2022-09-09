@@ -24,8 +24,7 @@ import java.util.List;
 public class RabbitMqTestConsumer {
 
 
-
-    @RabbitListener(queues = {RmqConstant.QUEUE_TEST})
+    @RabbitListener(queues = RmqConstant.QUEUE_TEST)
     @Transactional(rollbackFor = Exception.class)
     public void queueParseImportExcelData(Message message, Channel channel) throws IOException {
         //1. start consumer
@@ -38,12 +37,12 @@ public class RabbitMqTestConsumer {
         }
         //2. handle business
         try {
-//            schoolService.startUpdateTableSchool(reslit);
+            System.out.println("取出消息，内容为：" + s);
         } catch (Exception e) {
-            // manual ack
-            log.info("数据解析出现异常 {}",e.getMessage());
+            log.info("数据解析出现异常 {}", e.getMessage());
             e.printStackTrace();
         } finally {
+            // manual final ack
             channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
             log.info("结束消费......");
         }

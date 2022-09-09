@@ -1,11 +1,16 @@
+server:
+  port: 8082
+
+
 spring:
   rabbitmq:
     host: 192.168.50.101
-    port: 5672
-    username: qdst_2022
-    password: qdst_2022@
+    port: 5673
+    username: qdsg_2022
+    password: qdsg_2022@
     virtual-host: /
     publisher-confirms: true
+    #    ublisher-confirm-type: correlated
     publisher-returns: true
     listener:
       simple:
