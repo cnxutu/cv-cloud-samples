@@ -14,6 +14,7 @@
         <module>cv-cloud-db</module>
         <module>cv-cloud-alibaba</module>
         <module>cv-cloud-middleware</module>
+        <module>cv-cloud-tools/cv-fileServer-sample</module>
     </modules>
 
 
