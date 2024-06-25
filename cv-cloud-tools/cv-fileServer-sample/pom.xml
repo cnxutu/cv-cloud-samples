@@ -19,10 +19,11 @@
     </properties>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId></groupId>-->
-<!--            <artifactId>cv-cloud-common</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.cv</groupId>
+            <artifactId>cv-cloud-common</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
 </project>

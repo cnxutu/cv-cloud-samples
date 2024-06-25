@@ -1,5 +1,9 @@
 package com.cv.fileserversample;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+
 /**
  * @author: xutu
  * @since: 2023/2/8 14:13
