@@ -59,7 +59,7 @@ public class TestController {
     //************************************************单条记录的clickhouse数据操作************************************************
     @GetMapping("/detail")
     public Result detail() {
-        QueryWrapper<Order> customerId = new QueryWrapper<Order>().eq("customer_id", 123);
+        QueryWrapper<Order> customerId = new QueryWrapper<Order>().eq("customer_id", 113);
         Order byId = orderService.getOne(customerId);
         return Result.succeed(byId);
     }

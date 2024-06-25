@@ -50,6 +50,7 @@ public class TbSchoolDeclareController {
     public Result edit(@RequestParam("param1") int param1) {
         TbSchoolDeclare TbSchoolDeclare = new TbSchoolDeclare();
 //        boolean b = TbSchoolDeclareService.myUpdateById(TbSchoolDeclare);
+        // 注释
         if (param1 == 1) {
             throw new CustomBusinessException(ErrorCodeEnum.OPERATION_FAIL);
         }
