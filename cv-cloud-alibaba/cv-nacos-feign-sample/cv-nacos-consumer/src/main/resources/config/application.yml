@@ -41,5 +41,5 @@ management:
 # Logger Config
 logging:
   level:
-    com.clearvision.nacosfeignsample: debug
+    com.cv.nacosfeignsample: debug
 

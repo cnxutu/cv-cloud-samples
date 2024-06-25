@@ -44,5 +44,5 @@ management:
 # Logger Config
 logging:
   level:
-    com.clearvision.mybatissample: debug
+    com.cv.mybatissample: debug
 

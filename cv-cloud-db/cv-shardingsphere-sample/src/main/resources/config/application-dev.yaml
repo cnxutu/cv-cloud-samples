@@ -38,13 +38,13 @@ spring:
               algorithm-expression: ds-test-$->{status}
 #            standard:
 #              sharding-column: order_id
-#              preciseAlgorithmClassName: com.clearvision.shardingspheresample.common.config.DatabaseShardingConfig
+#              preciseAlgorithmClassName: com.cv.shardingspheresample.common.config.DatabaseShardingConfig
 #              algorithm-expression: ds-test-$->{order_id}
 #              algorithm-expression: ds-test-$->{user_id}
           table-strategy:
 #            standard:
 #              sharding-column: user_id
-#              precise-algorithm-class-name: com.clearvision.shardingspheresample.common.config.DatabaseShardingConfig
+#              precise-algorithm-class-name: com.cv.shardingspheresample.common.config.DatabaseShardingConfig
             inline:
               sharding-column: user_id
               algorithm-expression: tb_order_$->{user_id % 4}

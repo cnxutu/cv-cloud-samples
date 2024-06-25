@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>cv-cloud-samples</artifactId>
-        <groupId>com.clearvision</groupId>
+        <groupId>com.cv</groupId>
         <version>1.0.0</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
@@ -19,10 +19,10 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId></groupId>
-            <artifactId>cv-cloud-common</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId></groupId>-->
+<!--            <artifactId>cv-cloud-common</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 
 </project>

@@ -6,8 +6,8 @@ package com.cv.fileserversample;
  */
 
 @SpringBootApplication
-@ServletComponentScan("com.clearvision")
-//@MapperScan("com.clearvision.*.mapper")
+@ServletComponentScan("com.cv")
+//@MapperScan("com.cv.*.mapper")
 public class FileServerSampleApplication {
     public static void main(String[] args) {
         SpringApplication.run(FileServerSampleApplication.class, args);

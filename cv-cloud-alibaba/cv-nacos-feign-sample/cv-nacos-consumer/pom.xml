@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>cv-nacos-feign-sample</artifactId>
-        <groupId>com.clearvision</groupId>
+        <groupId>com.cv</groupId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -20,14 +20,14 @@
 
 
         <dependency>
-            <groupId>com.clearvision</groupId>
+            <groupId>com.cv</groupId>
             <artifactId>cv-cloud-common</artifactId>
             <version>1.0.0</version>
         </dependency>
 
 
         <dependency>
-            <groupId>com.clearvision</groupId>
+            <groupId>com.cv</groupId>
             <artifactId>baseinfo-api</artifactId>
             <version>1.0.0</version>
         </dependency>
@@ -36,14 +36,14 @@
 
 
         <dependency>
-            <groupId>com.clearvision</groupId>
+            <groupId>com.cv</groupId>
             <artifactId>cv-cloud-alibaba-nacos</artifactId>
             <version>1.0.0</version>
         </dependency>
 
 
         <dependency>
-            <groupId>com.clearvision</groupId>
+            <groupId>com.cv</groupId>
             <artifactId>cv-cloud-openfeign</artifactId>
             <version>1.0.0</version>
         </dependency>

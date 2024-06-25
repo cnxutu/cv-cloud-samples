@@ -41,7 +41,7 @@ management:
 # Logger Config
 logging:
   level:
-    com.clearvision.shardingspheresample: debug
+    com.cv.shardingspheresample: debug
 
 mybatis-plus:
   mapper-locations=classpath:mapper/*.xml:
