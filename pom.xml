@@ -11,10 +11,11 @@
     <modules>
 
         <module>cv-cloud-tools</module>
-        <module>cv-cloud-db</module>
-        <module>cv-cloud-alibaba</module>
-        <module>cv-cloud-middleware</module>
-        <module>cv-cloud-tools/cv-fileServer-sample</module>
+        <module>cv-cloud-orm-sample</module>
+        <module>cv-cloud-alibaba-sample</module>
+        <module>cv-cloud-middleware-sample</module>
+        <module>cv-cloud-tools</module>
+        <module>cv-cloud-components-sample</module>
     </modules>
 
 
