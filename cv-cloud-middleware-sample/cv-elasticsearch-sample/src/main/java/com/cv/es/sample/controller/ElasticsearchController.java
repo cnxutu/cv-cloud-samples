@@ -6,6 +6,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 
+
+/**
+ * es功能测试
+ */
 @RestController
 @RequestMapping("/api/elasticsearch")
 public class ElasticsearchController {
