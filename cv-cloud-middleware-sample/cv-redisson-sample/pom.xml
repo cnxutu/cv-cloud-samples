@@ -26,7 +26,7 @@
 
         <dependency>
             <groupId>com.cv</groupId>
-            <artifactId>cv-cloud-redis</artifactId>
+            <artifactId>cv-cloud-redisson</artifactId>
 <!--            <scope>system</scope>-->
             <version>1.0.0</version>
 <!--            <systemPath>/Users/xutu/.m2/common_repository/com/cv/cv-cloud-redis/1.0.0/cv-cloud-redis-1.0.0.jar</systemPath>-->
