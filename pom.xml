@@ -14,7 +14,6 @@
         <module>cv-cloud-orm-sample</module>
         <module>cv-cloud-alibaba-sample</module>
         <module>cv-cloud-middleware-sample</module>
-        <module>cv-cloud-tools</module>
         <module>cv-cloud-components-sample</module>
     </modules>
 

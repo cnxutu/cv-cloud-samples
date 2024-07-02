@@ -15,6 +15,7 @@
         <module>cv-excel-sample</module>
         <module>cv-qrcode-sample</module>
         <module>cv-word-sample</module>
+        <module>cv-fileServer-sample</module>
     </modules>
 
     <properties>

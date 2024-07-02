@@ -1,4 +1,4 @@
-package com.cv.gatewaysample.config;
+package com.cv.gateway.sample.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

@@ -14,7 +14,6 @@
     <modules>
         <module>cv-nacos-feign-sample</module>
         <module>cv-rocketmq-stream-sample</module>
-        <module>cv-gateway-sample</module>
         <module>cv-sentinel-sample</module>
         <module>cv-seata-sample</module>
         <module>cv-oauth2-springsecurity-sample</module>

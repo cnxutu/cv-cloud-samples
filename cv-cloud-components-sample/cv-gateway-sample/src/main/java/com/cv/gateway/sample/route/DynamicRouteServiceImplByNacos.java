@@ -1,4 +1,4 @@
-package com.cv.gatewaysample.route;
+package com.cv.gateway.sample.route;
 
 
 

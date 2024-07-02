@@ -8,9 +8,12 @@
         <artifactId>cv-cloud-samples</artifactId>
         <version>1.0.0</version>
     </parent>
-
+    <packaging>pom</packaging>
     <artifactId>cv-cloud-components-sample</artifactId>
 
+    <modules>
+        <module>cv-gateway-sample</module>
+    </modules>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
