@@ -17,6 +17,7 @@
         <module>cv-clickhouse-sample</module>
         <module>cv-mangodb-sample</module>
         <module>cv-redisson-sample</module>
+        <module>cv-redis-sample</module>
         <module>cv-elasticsearch-sample</module>
         <module>cv-shardingsphere-sample</module>
     </modules>
