@@ -26,9 +26,9 @@ public class RedisController {
 //        if (StrUtil.isNotEmpty(key2)) {
 //            Object o = (String)redisTemplate.boundHashOps(key1).get(key2);
 //        }
-
-
-    }
+//
+//
+//    }
 
 
 }
