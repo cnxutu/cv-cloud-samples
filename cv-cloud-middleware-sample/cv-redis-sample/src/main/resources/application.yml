@@ -1,6 +1,8 @@
-#spring:
-#  profiles:
-#    active: dev
-#  redis:
-#    cluster:
-#      nodes: 127.0.0.1:6379
+spring:
+  profiles:
+    active: dev
+  redis:
+    cluster:
+      nodes: 127.0.0.1:6379
+      maxRedirects: 3
+    timeout: 2000

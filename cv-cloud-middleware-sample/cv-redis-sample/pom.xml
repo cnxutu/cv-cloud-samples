@@ -43,16 +43,22 @@
             <version>1.0.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.cv</groupId>
-            <artifactId>cv-boot-common</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.cv</groupId>-->
+<!--            <artifactId>cv-boot-common</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>com.cv</groupId>
             <artifactId>cv-boot-redis</artifactId>
             <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.26</version>
         </dependency>
 
     </dependencies>

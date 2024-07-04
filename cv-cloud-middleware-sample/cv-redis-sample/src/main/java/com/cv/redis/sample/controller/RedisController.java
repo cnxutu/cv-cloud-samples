@@ -23,6 +23,26 @@ public class RedisController {
 
 
     /**
+     * 通过key获取添加缓存，支持hkey普通key
+     *
+     * @param key1
+     * @param key2
+     * @return
+     */
+    @GetMapping("/add")
+    public String add(@RequestParam("key1") String key1,
+                      @RequestParam(value = "key2", required = false) String key2,
+                      @RequestParam("content") String content) {
+        if (StrUtil.isNotEmpty(key2)) {
+            redisService.hset(key1, key2, content);
+            return "success!";
+        }
+        redisService.hset(key1, key2, content);
+        return "success!";
+    }
+
+
+    /**
      * 通过key获取缓存详情，支持hkey普通key
      *
      * @param key1
