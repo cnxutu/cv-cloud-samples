@@ -12,8 +12,8 @@
     <artifactId>cv-oauth2-springsecurity-sample</artifactId>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
    <dependencies>
@@ -43,7 +43,7 @@
         <!--  base dependency   -->
        <dependency>
            <groupId>com.cv</groupId>
-           <artifactId>cv-cloud-common</artifactId>
+           <artifactId>cv-boot-common</artifactId>
            <version>1.0.0</version>
        </dependency>
 
