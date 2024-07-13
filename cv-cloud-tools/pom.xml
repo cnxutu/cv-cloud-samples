@@ -16,6 +16,7 @@
         <module>cv-qrcode-sample</module>
         <module>cv-word-sample</module>
         <module>cv-fileServer-sample</module>
+        <module>cv-utils-sample</module>
     </modules>
 
     <properties>
