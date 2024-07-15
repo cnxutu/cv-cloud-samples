@@ -45,7 +45,7 @@ public class GuavaLoadingCacheUtil {
         cache.put(key, value);
     }
 
-    // 获取值
+    // 获取值，缓存未命中时自动加载
     public Object get(String key) {
         try {
             return cache.get(key);
@@ -53,6 +53,11 @@ public class GuavaLoadingCacheUtil {
             e.printStackTrace();
             return null;
         }
+    }
+
+    // 获取值，如果不存在则返回null，不触发加载
+    public Object getIfPresent(String key) {
+        return cache.getIfPresent(key);
     }
 
     // 删除值
@@ -75,7 +80,7 @@ public class GuavaLoadingCacheUtil {
     public static void main(String[] args) {
         GuavaLoadingCacheUtil cacheUtil = GuavaLoadingCacheUtil.getInstance();
 
-        // 获取值（缓存未命中时会自动加载）
+        // 尝试获取值（缓存未命中时会自动加载）
         String value = (String) cacheUtil.get("key1");
         System.out.println("Value for key1: " + value);
 
@@ -98,4 +103,5 @@ public class GuavaLoadingCacheUtil {
         System.out.println("Value for key1 after expiration: " + value);
     }
 }
+
 
