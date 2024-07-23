@@ -25,10 +25,19 @@ public class ElasticsearchRepository {
     @Autowired
     private RestHighLevelClient client;
 
-    public String indexDocument(String index, String id, String jsonString) throws IOException {
-        IndexRequest request = new IndexRequest(index).id(id).source(jsonString, XContentType.JSON);
-        IndexResponse response = client.index(request, RequestOptions.DEFAULT);
-        return response.getId();
+    public boolean createHotelIndex() throws IOException {
+        CreateIndexRequest request = new CreateIndexRequest("hotels");
+        String mapping = "{\n" +
+                "  \"mappings\": {\n" +
+                "    \"properties\": {\n" +
+                "      \"name\": { \"type\": \"text\" },\n" +
+                "      \"location\": { \"type\": \"geo_point\" }\n" +
+                "    }\n" +
+                "  }\n" +
+                "}";
+        request.source(mapping, XContentType.JSON);
+        CreateIndexResponse createIndexResponse = client.indices().create(request, RequestOptions.DEFAULT);
+        return createIndexResponse.isAcknowledged();
     }
 
 
@@ -42,6 +51,14 @@ public class ElasticsearchRepository {
         CreateIndexResponse createIndexResponse = client.indices().create(request, RequestOptions.DEFAULT);
         return createIndexResponse.isAcknowledged();
     }
+
+
+    public String indexDocument(String index, String id, String jsonString) throws IOException {
+        IndexRequest request = new IndexRequest(index).id(id).source(jsonString, XContentType.JSON);
+        IndexResponse response = client.index(request, RequestOptions.DEFAULT);
+        return response.getId();
+    }
+
 
     public String addDocument(String indexName, String id, Map<String, Object> jsonMap) throws IOException {
         IndexRequest indexRequest = new IndexRequest(indexName)

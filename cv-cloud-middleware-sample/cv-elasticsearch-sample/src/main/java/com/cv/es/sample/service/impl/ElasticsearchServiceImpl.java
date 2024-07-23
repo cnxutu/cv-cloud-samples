@@ -15,6 +15,18 @@ public class ElasticsearchServiceImpl implements IElasticsearchService {
     @Autowired
     private ElasticsearchRepository elasticsearchRepository;
 
+
+    /**
+     * 创建酒店 index
+     * @return
+     * @throws IOException
+     */
+    public boolean createHotelIndex() throws IOException {
+        return elasticsearchRepository.createHotelIndex();
+    }
+
+
+
     @Override
     public boolean createIndex(String indexName) throws IOException {
         return elasticsearchRepository.createIndex(indexName);
