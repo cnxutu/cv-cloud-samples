@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 /**
+ * ES酒店查询模拟
  * @author: xutu
  * @since: 2024/7/23 15:11
  */
@@ -32,6 +33,12 @@ public class HotelController {
     @PostMapping("/batchAdd")
     public List<String> addHotelsBatch(@RequestBody List<HotelQuery> hotels) throws IOException {
         return hotelService.addHotelsBatch(hotels);
+    }
+
+
+    @GetMapping("/allHotels")
+    public List<HotelDTO> getAllHotels() throws IOException {
+        return hotelService.getAllHotels();
     }
 
 

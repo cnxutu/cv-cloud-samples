@@ -33,6 +33,10 @@ public class HotelService {
         return hotelRepository.saveHotelsBatch(hotels);
     }
 
+    public List<HotelDTO> getAllHotels() throws IOException {
+        return hotelRepository.findAllHotels();
+    }
+
     public List<HotelDTO> findNearbyHotels(double lat, double lon, double distance) throws IOException {
         return hotelRepository.findHotelsByLocation(lat, lon, distance);
     }

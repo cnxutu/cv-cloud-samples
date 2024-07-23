@@ -15,6 +15,8 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.GeoDistanceQueryBuilder;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
+import org.elasticsearch.search.sort.SortBuilders;
+import org.elasticsearch.search.sort.SortOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -54,6 +56,28 @@ public class HotelRepository {
         List<String> ids = new ArrayList<>();
         bulkResponse.forEach(bulkItemResponse -> ids.add(bulkItemResponse.getId()));
         return ids;
+    }
+
+    public List<HotelDTO> findAllHotels() throws IOException {
+        SearchRequest searchRequest = new SearchRequest("hotels");
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        searchSourceBuilder.query(org.elasticsearch.index.query.QueryBuilders.matchAllQuery());
+        searchRequest.source(searchSourceBuilder);
+
+        SearchResponse searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);
+
+        List<HotelDTO> hotels = new ArrayList<>();
+        for (SearchHit hit : searchResponse.getHits().getHits()) {
+            Map<String, Object> sourceAsMap = hit.getSourceAsMap();
+            hotels.add(new HotelDTO(
+                    (String) sourceAsMap.get("name"),
+                    (double) ((Map) sourceAsMap.get("location")).get("lat"),
+                    (double) ((Map) sourceAsMap.get("location")).get("lon"),
+                    (double) sourceAsMap.get("price"),
+                    (double) sourceAsMap.get("rating")
+            ));
+        }
+        return hotels;
     }
 
 
@@ -113,8 +137,13 @@ public class HotelRepository {
                 .must(distanceQueryBuilder)
                 .filter(QueryBuilders.rangeQuery("price").gt(minPrice));
 
+        // 添加价格排序（从低到高）
         searchSourceBuilder.query(boolQuery);
+        searchSourceBuilder.sort(SortBuilders.fieldSort("price").order(SortOrder.ASC));
         searchRequest.source(searchSourceBuilder);
+
+//        searchSourceBuilder.query(boolQuery);
+//        searchRequest.source(searchSourceBuilder);
 
         SearchResponse searchResponse = client.search(searchRequest, RequestOptions.DEFAULT);
 
