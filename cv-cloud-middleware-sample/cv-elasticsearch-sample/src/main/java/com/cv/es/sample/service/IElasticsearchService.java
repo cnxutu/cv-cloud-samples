@@ -1,6 +1,7 @@
 package com.cv.es.sample.service;
 
 import java.io.IOException;
+import java.util.Map;
 
 public interface IElasticsearchService {
 
@@ -12,4 +13,7 @@ public interface IElasticsearchService {
 
     public String deleteDocument(String index, String id) throws IOException;
 
+    boolean createIndex(String indexName) throws IOException;
+
+    String addDocument(String indexName, String id, Map<String, Object> document) throws IOException;
 }
