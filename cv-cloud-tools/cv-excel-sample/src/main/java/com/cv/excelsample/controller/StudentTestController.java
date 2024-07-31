@@ -3,7 +3,7 @@ package com.cv.excelsample.controller;
 import cn.hutool.core.bean.BeanUtil;
 import com.alibaba.excel.EasyExcel;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
-import com.cv.common.enums.DeleteEnum;
+import com.cv.common.enums.DeletedEnum;
 import com.cv.common.pojo.vo.Result;
 import com.cv.excelsample.common.enums.ExcelTypeEnum;
 import com.cv.excelsample.common.utils.EasyExcelUtil;
@@ -91,7 +91,7 @@ public class StudentTestController {
 //            fileName = URLDecoder.decode("", "UTF-8");
 //            response.setHeader("Content-disposition", "attachment;filename=" + fileName);
 //            List<StudentBaseDO> list = studentBaseService.list(Wrappers.<StudentBaseDO>lambdaQuery()
-//                    .eq(StudentBaseDO::getIsDeleted, DeleteEnum.NORMAL.getCode())
+//                    .eq(StudentBaseDO::getIsDeleted, DeletedEnum.NORMAL.getCode())
 //            );
 //        List<StudentWriteVO> studentWriteVOS = BeanUtil.copyToList(list, StudentWriteVO.class);
 //            EasyExcel.write(response.getOutputStream(), StudentWriteVO.class).sheet(fileName).doWrite(studentWriteVOS);
@@ -104,7 +104,7 @@ public class StudentTestController {
         // orm 获取数据
         List list = new ArrayList<>();
 //        List<StudentBaseDO> list = studentBaseService.list(Wrappers.<StudentBaseDO>lambdaQuery()
-//                .eq(StudentBaseDO::getIsDeleted, DeleteEnum.NORMAL.getCode())
+//                .eq(StudentBaseDO::getIsDeleted, DeletedEnum.NORMAL.getCode())
 //        );
         List<StudentWriteVO> studentWriteVOS = BeanUtil.copyToList(list, StudentWriteVO.class);
         EasyExcel.write(fileName, StudentWriteVO.class).sheet("模板").doWrite(studentWriteVOS);
