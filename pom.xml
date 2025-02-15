@@ -15,6 +15,7 @@
         <module>cv-cloud-alibaba-sample</module>
         <module>cv-cloud-middleware-sample</module>
         <module>cv-cloud-components-sample</module>
+        <module>cv-cloud-base-sample</module>
     </modules>
 
 
