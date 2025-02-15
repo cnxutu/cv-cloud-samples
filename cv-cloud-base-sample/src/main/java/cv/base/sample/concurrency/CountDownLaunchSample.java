@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @author: xutu
  * @since: 2025/2/15 15:27
  */
-public class CountDownLaunch {
+public class CountDownLaunchSample {
     public static void main(String[] args) throws InterruptedException {
         // 简单使用
         System.out.println("============ step1 begin ============");
