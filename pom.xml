@@ -9,13 +9,6 @@
     <packaging>pom</packaging>
     <version>1.0.0</version>
     <modules>
-
-        <module>cv-cloud-tools</module>
-        <module>cv-cloud-orm-sample</module>
-        <module>cv-cloud-alibaba-sample</module>
-        <module>cv-cloud-middleware-sample</module>
-        <module>cv-cloud-components-sample</module>
-        <module>cv-cloud-base-sample</module>
         <module>cv-cloud-net-sample</module>
     </modules>
 
