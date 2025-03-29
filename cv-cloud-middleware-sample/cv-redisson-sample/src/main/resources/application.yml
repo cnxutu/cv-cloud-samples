@@ -1,0 +1,5 @@
+redisson:
+  host: 127.0.0.1
+  port: 6379
+  password: Win2025@
+  db: 1
