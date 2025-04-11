@@ -5,20 +5,32 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.cv</groupId>
-        <artifactId>cv-cloud-samples</artifactId>
+        <artifactId>cv-cloud-components-sample</artifactId>
         <version>1.0.0</version>
     </parent>
-    <packaging>pom</packaging>
-    <artifactId>cv-cloud-components-sample</artifactId>
 
-    <modules>
-        <module>cv-gateway-sample</module>
-        <module>cv-log-sample</module>
-    </modules>
+    <groupId>org.example</groupId>
+    <artifactId>cv-log-sample</artifactId>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.cv</groupId>
+            <artifactId>cv-boot-starter</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+
+
+    </dependencies>
+
+
+
 
 </project>
