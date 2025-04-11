@@ -1,4 +1,4 @@
-package log;
+package com.cv.log;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
