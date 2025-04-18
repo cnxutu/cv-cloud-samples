@@ -3,11 +3,34 @@
 server:
   port: 8889
 
+ribbon:
+  ConnectTimeout: 3000  # 连接 B 服务的超时时间，单位是毫秒
+  ReadTimeout: 30000    # 读取 B 服务响应的超时时间，单位是毫秒
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" # 启用所有端点（也可只启用部分，如 health, metrics）
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+  metrics:
+    enable:
+      all: true
+    web:
+      server:
+        request:
+          autotime:
+            enabled: true
+
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/log_db?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://localhost:33062/log_db?useSSL=false&useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
-    password: your_password
+    password: Win2025!
     driver-class-name: com.mysql.cj.jdbc.Driver
 
     # 如果你使用 druid 数据源
